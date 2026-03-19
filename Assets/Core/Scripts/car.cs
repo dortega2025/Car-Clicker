@@ -7,18 +7,12 @@ using UnityEngine.UIElements;
 public class car : MonoBehaviour
 {
     public float speed;
-    public float baseSpeed;
     public List<GameObject> path;
     private int pathIdx;
-    public float frame;
-    public float aero;
-    public float tires;
-    public float engineFactor;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         speed = 5f;
-        engineFactor = 1f;
         pathIdx = 0;
     }
 
@@ -40,7 +34,6 @@ public class car : MonoBehaviour
                 pathIdx++;
             }
         }
-        speed = (baseSpeed+frame+aero+tires)*engineFactor;
         transform.position = Vector2.MoveTowards(transform.position, path[pathIdx].transform.position, speed * Time.deltaTime);
     }
 }
