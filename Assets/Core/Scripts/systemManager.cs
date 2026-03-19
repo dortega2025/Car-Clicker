@@ -26,4 +26,12 @@ public class systemManager : MonoBehaviour
     {
         points += increaseFactor;
     }
+
+    public void spendPoints(int price)
+    {
+        if (price >= points)
+        {
+            points -= price;
+        }
+    }
 }
