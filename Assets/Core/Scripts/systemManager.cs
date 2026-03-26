@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 public class systemManager : MonoBehaviour
 {
     public int points;
-    private int increaseFactor;
+    public int increaseFactor;
     public TMP_Text pointCnt;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
