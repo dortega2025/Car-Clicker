@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Points
   - manager
+  - Engine Cost
+  - Aero Cost
+  - Tires Cost
+  - Frame Cost
+  - Bonus Cost
   layers:
   - Default
   - TransparentFX
