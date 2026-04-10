@@ -6,7 +6,7 @@ public class EngineMultiplierScript : MonoBehaviour
 {
     private int  val = 0;
     private int cost = 50;
-     private float[] engineMultiplier = {1.0f,1.2f,2.5f,4.0f,8.0f,16.0f,32.0f};
+    private float[] engineMultiplier = {1.0f,1.2f,2.5f,4.0f,8.0f,16.0f,32.0f};
     GameObject player;
     GameObject ppoints;
     public TMP_Text EngineCost;
