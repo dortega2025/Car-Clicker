@@ -5,7 +5,8 @@ using TMPro;
 public class TiresSumScript : MonoBehaviour
 {
     private float TiresSum = 0.0f;
-    private int cost = 15;
+    private int val = 0;
+    private int cost = 5;
     GameObject ppoints;
     GameObject player;
     public TMP_Text TireCost;
@@ -20,14 +21,15 @@ public class TiresSumScript : MonoBehaviour
 
     public void OnClick()
     {
-        if(ppoints.GetComponent<systemManager>().points>=cost){
-            TiresSum++;
+        if(ppoints.GetComponent<systemManager>().points>=cost && val <= 5){
+            val++;
+            TiresSum += 2;
             player.GetComponent<car>().tires = TiresSum;
-            Debug.Log(TiresSum);  
             ppoints.GetComponent<systemManager>().points -= cost;
-            cost = cost*2; 
+            cost *= 2; 
             TireCost.text = "Cost: " + cost;
+        } else if (val > 5) {
+            TireCost.text = "Maxed Out!";
         }
-        
     } 
 }

@@ -20,7 +20,7 @@ public class car : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        baseSpeed = 5f;
+        baseSpeed = 15f;
         engineFactor = 1f;
         pathIdx = 0;
         manager = GameObject.FindGameObjectWithTag("manager");

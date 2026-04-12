@@ -5,6 +5,7 @@ using TMPro;
 public class AeroSumScript : MonoBehaviour
 {
     private float aeroSum = 0.0f;
+    private int val = 0;
     private int cost = 3;
     GameObject player;
     GameObject ppoints;
@@ -21,17 +22,15 @@ public class AeroSumScript : MonoBehaviour
     // Update is called once per frame
     public void OnClick()
     {
-        if(ppoints.GetComponent<systemManager>().points>=cost){
-            aeroSum++;
+        if(ppoints.GetComponent<systemManager>().points>=cost && val <= 5){
+            val++;
+            aeroSum =+ 2;
             player.GetComponent<car>().aero = aeroSum;
-            Debug.Log(aeroSum);
             ppoints.GetComponent<systemManager>().points -= cost;
-            cost = cost*2;
-            Debug.Log(cost);
-            AeroCost.text = "Cost:\r\n" + cost;
-            
-    
+            cost *= 2;
+            AeroCost.text = "Cost: " + cost;
+        } else if (val > 5) {
+            AeroCost.text = "Maxed Out!";
         }
-        
     }
 }

@@ -5,7 +5,8 @@ using TMPro;
 public class FrameSumScript : MonoBehaviour
 {
     private float frameSum = 0.0f;
-    private int cost = 8;
+    private int val = 0;
+    private int cost = 2;
     GameObject player;
     GameObject ppoints;
     public TMP_Text FrameCost;
@@ -21,14 +22,15 @@ public class FrameSumScript : MonoBehaviour
     
     public void OnClick()
     {
-        if(ppoints.GetComponent<systemManager>().points>=cost){
+        if(ppoints.GetComponent<systemManager>().points>=cost && val <= 5){
+            val++;
             frameSum++;
             player.GetComponent<car>().frame = frameSum;
-            Debug.Log(frameSum);
             ppoints.GetComponent<systemManager>().points-=cost;
-            cost = cost*2;
+            cost *= 2;
             FrameCost.text = "Cost: " + cost;
+        } else if (val > 5) {
+            FrameCost.text = "Maxed Out!";
         }
-        
     } 
 }
