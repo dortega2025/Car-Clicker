@@ -23,7 +23,7 @@ public class TiresSumScript : MonoBehaviour
     {
         if(ppoints.GetComponent<systemManager>().points>=cost && val <= 5){
             val++;
-            TiresSum += 2;
+            TiresSum += 5;
             player.GetComponent<car>().tires = TiresSum;
             ppoints.GetComponent<systemManager>().points -= cost;
             cost *= 2; 

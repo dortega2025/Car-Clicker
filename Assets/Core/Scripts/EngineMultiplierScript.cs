@@ -21,7 +21,7 @@ public class EngineMultiplierScript : MonoBehaviour
         EngineCost.text = "Cost: " + cost;
     }
     public void OnClick(){
-        if(ppoints.GetComponent<systemManager>().points>=cost && val <=6){
+        if(ppoints.GetComponent<systemManager>().points >= cost && val < 7){
             val++;
             player.GetComponent<car>().engineFactor = engineMultiplier[val];
             ppoints.GetComponent<systemManager>().points -= cost;

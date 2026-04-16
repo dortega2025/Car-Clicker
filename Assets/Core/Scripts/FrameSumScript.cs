@@ -24,7 +24,7 @@ public class FrameSumScript : MonoBehaviour
     {
         if(ppoints.GetComponent<systemManager>().points>=cost && val <= 5){
             val++;
-            frameSum++;
+            frameSum += 2;
             player.GetComponent<car>().frame = frameSum;
             ppoints.GetComponent<systemManager>().points-=cost;
             cost *= 2;

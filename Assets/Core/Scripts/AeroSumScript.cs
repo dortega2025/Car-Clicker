@@ -24,7 +24,7 @@ public class AeroSumScript : MonoBehaviour
     {
         if(ppoints.GetComponent<systemManager>().points>=cost && val <= 5){
             val++;
-            aeroSum =+ 2;
+            aeroSum =+ 3;
             player.GetComponent<car>().aero = aeroSum;
             ppoints.GetComponent<systemManager>().points -= cost;
             cost *= 2;
